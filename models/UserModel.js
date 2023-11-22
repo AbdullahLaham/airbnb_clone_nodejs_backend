@@ -12,7 +12,12 @@ const UserSchema = new mongoose.Schema({
     },
     image: String,
     password: String,
-    favoriteIds: [String],
+    favoriteIds: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Listing",
+        }
+    ],
     accounts: [
         {
             type: mongoose.Schema.Types.ObjectId,

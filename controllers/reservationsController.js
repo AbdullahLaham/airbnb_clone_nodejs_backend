@@ -39,10 +39,10 @@ export const cancelReservation = async (req, res) => {
     const {_id} = req?.user;
     const {id} = req?.params;
     try {
-
-
+        const deletedReservation = await Reservation.findByIdAndDelete(id);
+        res.json(deletedReservation);
     } catch(error) {
-
+        throw new Error(error);
     }
 
 }

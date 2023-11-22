@@ -8,7 +8,13 @@ const ListingSchema = new mongoose.Schema({
   roomCount: Number,
   bathroomCount: Number,
   guestCount: Number,
-  locationValue: String,
+  locationValue: {
+    flag: String,
+    label: String,
+    latlng: [],
+    region: String,
+    value: String,
+  },
   
   userId: {
     type: mongoose.Schema.Types.ObjectId,

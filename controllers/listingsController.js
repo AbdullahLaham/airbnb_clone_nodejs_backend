@@ -16,7 +16,7 @@ export const createListing = async (req, res) => {
     try {
         const body = req?.body;
         const { title, description,  imageSrc,  category, roomCount, bathroomCount, guestCount, location, price, userId} = body;
-        const listing = await Listing.create({title, description,  imageSrc,  category, roomCount, bathroomCount, guestCount, location, price, userId})
+        const listing = await Listing.create({title, description,  imageSrc,  category, roomCount, bathroomCount, guestCount, locationValue: location, price, userId})
         
         Object.keys(body).forEach((value) => {
             if (!body[value]) {
